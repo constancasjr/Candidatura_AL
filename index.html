@@ -1,0 +1,582 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Constança Rocha · Candidatura à Assembleia do LIVRE</title>
+<meta name="description" content="Constança Rocha - estudante de Ciência de Dados (NOVA IMS), Póvoa de Santa Iria, GCL Lisboa Norte. Candidatura à Assembleia do LIVRE." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  /* ---------- Tokens (palette adapted from the campaign poster: cream, olive, sage, terracotta) ---------- */
+  :root {
+    --green:      #9DB84A;   /* leaf / accent green from the poster stem */
+    --green-light:#C9DE8E;   /* lightest sage green from the poster's inner arch */
+    --forest:     #5C6E42;   /* dark olive - arch outline, ecology emphasis */
+    --green-ink:  #4E5D3A;   /* deep olive for text/links on light ground */
+    --sig-line:   #5C6E42;   /* olive line for the data signature */
+    --terracotta: #BC5F52;   /* dusty rose/terracotta from the poster's flower */
+
+    --paper:      #F3ECD6;   /* warm cream background */
+    --surface:    #EAE0C0;   /* slightly deeper cream surface */
+    --ink:        #332D1F;   /* dark olive-brown ink, matches heading tone */
+    --muted:      #7C7256;
+    --line:       #DED0A8;
+    --shadow:     0 1px 2px rgba(51,45,31,.06), 0 12px 40px -18px rgba(51,45,31,.25);
+
+    --maxw: 46rem;
+    --step--1: clamp(.82rem, .8rem + .1vw, .9rem);
+    --step-0:  clamp(1.06rem, 1rem + .3vw, 1.2rem);
+    --step-1:  clamp(1.3rem, 1.2rem + .5vw, 1.62rem);
+    --step-2:  clamp(1.8rem, 1.45rem + 1.4vw, 2.5rem);
+    --step-4:  clamp(3rem, 2rem + 5.4vw, 5.8rem);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper:   #1B1A11;
+      --surface: #24231A;
+      --ink:     #F1EAD3;
+      --muted:   #B3AA8A;
+      --line:    #35331F;
+      --green:   #B7CE6C;
+      --green-light: #D6E7A8;
+      --green-ink: #A9C168;
+      --sig-line:  #A9C168;
+      --terracotta: #D97F70;
+      --shadow:  0 1px 2px rgba(0,0,0,.4), 0 18px 50px -20px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="light"] {
+    --paper:#F3ECD6; --surface:#EAE0C0; --ink:#332D1F; --muted:#7C7256;
+    --line:#DED0A8; --green-ink:#4E5D3A; --sig-line:#5C6E42; --green-light:#C9DE8E;
+    --shadow: 0 1px 2px rgba(51,45,31,.06), 0 12px 40px -18px rgba(51,45,31,.25);
+  }
+  :root[data-theme="dark"] {
+    --paper:#1B1A11; --surface:#24231A; --ink:#F1EAD3; --muted:#B3AA8A;
+    --line:#35331F; --green-ink:#A9C168; --sig-line:#A9C168; --green-light:#D6E7A8;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 18px 50px -20px rgba(0,0,0,.7);
+  }
+
+  /* ---------- Base ---------- */
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Figtree", system-ui, sans-serif;
+    font-size: var(--step-0);
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection { background: var(--green); color: #1B1A11; }
+  a { color: var(--green-ink); text-underline-offset: .18em; text-decoration-thickness: .07em; }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--green); outline-offset: 3px; border-radius: 3px;
+  }
+  img { max-width: 100%; display: block; }
+
+  .wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: 1.5rem; }
+
+  .eyebrow {
+    font-family: "Figtree", sans-serif;
+    font-weight: 600;
+    font-size: var(--step--1);
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--green-ink);
+    display: inline-flex; align-items: center; gap: .6em;
+    margin: 0;
+  }
+  .eyebrow::before {
+    content: ""; width: 1.6rem; height: 2px; background: var(--terracotta); display: inline-block;
+  }
+
+  /* ---------- Theme toggle ---------- */
+  .toggle {
+    position: fixed; top: 1rem; right: 1rem; z-index: 10;
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: color-mix(in srgb, var(--paper) 80%, transparent);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--line); color: var(--muted);
+    border-radius: 999px; padding: .4rem .7rem;
+    font: inherit; font-size: var(--step--1); font-weight: 600; cursor: pointer;
+    transition: color .2s, border-color .2s;
+  }
+  .toggle:hover { color: var(--ink); border-color: var(--green); }
+
+  /* ---------- Hero ---------- */
+  header.hero { padding-top: clamp(3.5rem, 8vw, 6.5rem); }
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.8rem, 4vw, 2.8rem);
+  }
+
+  h1.name {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 600;
+    font-size: var(--step-4);
+    line-height: .98;
+    letter-spacing: -.015em;
+    text-wrap: balance;
+    margin: .7rem 0 0;
+  }
+  h1.name { color: var(--green-ink); }
+  h1.name .last { display: block; font-weight: 500; }
+
+  /* LIVRE badge */
+  .hero-top {
+    display: flex; align-items: center; flex-wrap: wrap;
+    gap: .8rem 1.1rem;
+    margin-bottom: clamp(1.6rem, 4vw, 2.6rem);
+  }
+  .livre-badge {
+    display: inline-flex; align-items: center;
+    background: #FBF7EA;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: .5rem .85rem;
+    box-shadow: var(--shadow);
+  }
+  .livre-badge img { height: 1.45rem; width: auto; display: block; }
+
+  /* Political lead */
+  .lead {
+    font-size: var(--step-1);
+    font-weight: 500;
+    line-height: 1.38;
+    color: var(--ink);
+    margin: 1.1rem 0 0;
+    max-width: 32ch;
+    text-wrap: balance;
+  }
+  .lead b { font-weight: 700; color: var(--green-light); }
+
+  /* Supporting identity line */
+  .role {
+    font-size: var(--step--1);
+    font-weight: 600;
+    letter-spacing: .02em;
+    color: var(--muted);
+    margin: 1.2rem 0 0;
+  }
+
+  /* facts */
+  .facts { list-style: none; margin: 1.6rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: .55rem; }
+  .facts li {
+    font-size: var(--step--1); font-weight: 600; letter-spacing: .01em;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: .38rem .75rem; border-radius: 999px;
+    display: inline-flex; align-items: center; gap: .45em;
+  }
+  .facts li::before {
+    content: ""; width: .48rem; height: .48rem; border-radius: 50%;
+    background: var(--terracotta); flex: none;
+  }
+
+  /* portrait + carousel */
+  .portrait {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    overflow: hidden;
+    background:
+      radial-gradient(120% 120% at 30% 10%, color-mix(in srgb, var(--green) 22%, var(--surface)), var(--surface));
+    border: 3px solid var(--forest);
+    box-shadow: var(--shadow);
+  }
+  .portrait img { width: 100%; height: 100%; object-fit: cover; }
+  .carousel-track {
+    display: flex; height: 100%;
+    transition: transform .5s cubic-bezier(.4, 0, .2, 1);
+  }
+  .carousel-track img { min-width: 100%; flex: none; }
+  .c-nav {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    z-index: 2; width: 2.2rem; height: 2.2rem; border-radius: 50%;
+    display: none; align-items: center; justify-content: center;
+    border: none; cursor: pointer;
+    background: color-mix(in srgb, #332D1F 55%, transparent);
+    color: #fff; font-size: 1.5rem; line-height: 1; padding-bottom: .12em;
+    backdrop-filter: blur(3px);
+    transition: background .2s, opacity .2s; opacity: .85;
+  }
+  .c-nav:hover { background: color-mix(in srgb, #332D1F 78%, transparent); opacity: 1; }
+  .c-prev { left: .6rem; }
+  .c-next { right: .6rem; }
+  .has-many .c-nav { display: inline-flex; }
+  .c-dots {
+    position: absolute; left: 0; right: 0; bottom: .7rem; z-index: 2;
+    display: none; justify-content: center; gap: .4rem;
+  }
+  .has-many .c-dots { display: flex; }
+  .c-dots button {
+    width: .5rem; height: .5rem; padding: 0; border-radius: 50%;
+    border: none; cursor: pointer;
+    background: rgba(255,255,255,.55);
+    box-shadow: 0 0 0 1px rgba(51,45,31,.3);
+    transition: background .2s, transform .2s;
+  }
+  .c-dots button[aria-current="true"] { background: var(--green); transform: scale(1.25); }
+  .portrait .placeholder {
+    position: absolute; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: .5rem; text-align: center;
+    color: var(--muted); padding: 1rem;
+  }
+  .portrait .placeholder svg { width: 2.4rem; height: 2.4rem; opacity: .5; }
+  .portrait .placeholder span { font-size: var(--step--1); font-weight: 600; }
+  .portrait .placeholder code {
+    font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+    font-size: .78em; background: var(--paper); border: 1px solid var(--line);
+    padding: .1em .45em; border-radius: 5px; color: var(--ink);
+  }
+
+  /* ---------- Signature: data over an ecological ground ---------- */
+  .signature { padding: clamp(2rem, 6vw, 3.5rem) 0 clamp(.5rem, 2vw, 1rem); }
+  .signature figure { margin: 0; }
+  .signature canvas { width: 100%; height: 96px; display: block; }
+  .signature figcaption {
+    margin-top: .7rem; font-size: var(--step--1); color: var(--muted);
+    letter-spacing: .03em; text-align: center; font-style: italic;
+  }
+
+  /* ---------- Sections ---------- */
+  main { padding-bottom: 2rem; }
+  section.block { padding-block: clamp(2.4rem, 6vw, 4rem); border-top: 1px solid var(--line); }
+  section.block:first-of-type { border-top: none; }
+  .block h2 {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 600; font-size: var(--step-2); line-height: 1.06;
+    letter-spacing: -.01em; text-wrap: balance;
+    margin: .8rem 0 1.3rem;
+  }
+  .prose > p { margin: 0 0 1.15em; max-width: 65ch; }
+  .prose > p:last-child { margin-bottom: 0; }
+  .prose strong { font-weight: 600; color: var(--ink); }
+
+  /* pull quote */
+  .quote {
+    border: none; margin: 0; padding: clamp(2.4rem, 6vw, 4rem) 0;
+    border-top: 1px solid var(--line);
+  }
+  .quote blockquote {
+    margin: 0; font-family: "Newsreader", Georgia, serif;
+    font-weight: 500; font-style: italic;
+    font-size: var(--step-2); line-height: 1.24;
+    letter-spacing: -.005em; text-wrap: balance; color: var(--ink);
+  }
+  .quote blockquote span { color: var(--terracotta); }
+
+  /* ---------- Closing ---------- */
+  .closing { padding-block: clamp(3rem, 8vw, 5.5rem); border-top: 1px solid var(--line); text-align: center; }
+  .closing p.motto {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 600; font-size: var(--step-2); line-height: 1.06;
+    letter-spacing: -.01em; margin: 0; text-wrap: balance;
+  }
+  .closing p.motto .g { color: var(--terracotta); }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding-block: 2rem 3rem;
+    color: var(--muted); font-size: var(--step--1);
+    display: flex; flex-wrap: wrap; gap: .4rem 1rem; justify-content: space-between;
+    letter-spacing: .02em;
+  }
+  footer .brand { font-weight: 700; color: var(--ink); letter-spacing: .01em; }
+  footer .foot-left { display: inline-flex; align-items: center; gap: .7rem; }
+  footer .livre-badge { padding: .35rem .6rem; border-radius: 8px; }
+  footer .livre-badge img { height: 1.05rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+
+<button class="toggle" id="themeBtn" aria-label="Alternar tema claro/escuro" title="Alternar tema claro/escuro" type="button">
+  <span aria-hidden="true">◐</span> Tema
+</button>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <span class="livre-badge"><img src="logo-livre.png" alt="LIVRE" /></span>
+      <p class="eyebrow">Candidatura à Assembleia · 2026–2028</p>
+    </div>
+    <div class="hero-grid">
+      <!-- Carrossel: larga foto1.jpg, foto2.jpg… (até foto8.jpg) nesta pasta. -->
+      <div class="portrait" id="carousel">
+        <div class="carousel-track" id="track"></div>
+        <button class="c-nav c-prev" id="cPrev" type="button" aria-label="Foto anterior" title="Foto anterior">‹</button>
+        <button class="c-nav c-next" id="cNext" type="button" aria-label="Foto seguinte" title="Foto seguinte">›</button>
+        <div class="c-dots" id="cDots" role="tablist" aria-label="Selecionar foto"></div>
+        <div class="placeholder" id="fotoPlaceholder" style="display:none;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+            <circle cx="12" cy="9" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/>
+          </svg>
+          <span>As tuas fotos aqui</span>
+          <code>foto1.jpg, foto2.jpg…</code>
+        </div>
+      </div>
+
+      <div class="hero-text">
+        <h1 class="name">Constança <span class="last">Rocha</span></h1>
+        <p class="lead">Uma política feita <b>com as pessoas</b> e para as pessoas - em que a transição climática traga mais <b>justiça social</b> e os <b>dados</b> ajudem a não deixar ninguém para trás.</p>
+        <p class="role">Estudante de Ciência de Dados · NOVA IMS · Póvoa de Santa Iria · GCL Lisboa Norte</p>
+        <ul class="facts">
+          <li title="Idade">20 anos</li>
+          <li title="Localidade">Póvoa de Santa Iria</li>
+          <li title="Curso">Ciência de Dados · NOVA IMS</li>
+          <li title="Cargo autárquico">Nº 2 à Assembleia de Freguesia</li>
+          <li title="Membro do LIVRE">No LIVRE desde 2025</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="signature">
+  <div class="wrap">
+    <figure>
+      <canvas id="sig" aria-hidden="true"></canvas>
+      <figcaption>Ler os padrões - com as pessoas no centro.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section class="block">
+    <p class="eyebrow">Apresentação</p>
+    <h2>Quem sou</h2>
+    <div class="prose">
+      <p>Olá! Chamo-me <strong>Constança Rocha</strong>, tenho 20 anos, cresci na Póvoa de Santa Iria e sou estudante de Ciência de Dados no Instituto Superior de Estatística e Gestão de Informação (NOVA IMS).</p>
+      <p>Juntei-me ao LIVRE em setembro de 2025, porque aqui a ecologia é determinante e a liberdade caminha lado a lado com a igualdade e o progresso. Fui número dois da lista para a Assembleia de Freguesia da Póvoa de Santa Iria nas últimas eleições autárquicas e faço parte do GCL Lisboa Norte. Estou aqui para ouvir, aprender e contribuir, de modo a ajudar a transformar grandes problemas em respostas construídas em comunidade.</p>
+      <p>Acredito que a política só faz sentido quando é construída para as pessoas e com as pessoas, porque por trás de cada problema e de cada política há sempre a vida de alguém. A minha formação dá-me ferramentas para olhar criticamente para o mundo, ler padrões e questionar o que os números escondem - mas os dados só têm valor quando colocamos as pessoas no centro.</p>
+    </div>
+  </section>
+
+  <figure class="quote">
+    <blockquote>Por trás de cada problema e de cada política há sempre <span>a vida de alguém.</span></blockquote>
+  </figure>
+
+  <section class="block">
+    <p class="eyebrow">Declaração de candidatura</p>
+    <h2>Porque me candidato</h2>
+    <div class="prose">
+      <p>Esta é a minha primeira candidatura à Assembleia do LIVRE. Gosto de ouvir e de procurar saber primeiro e concluir depois, e de contribuir sem assumir que tenho todas as respostas. Sou pouco experiente e tenho muito para aprender, mas acredito ter a vontade e a ética de trabalho necessárias para representar todos os membros e apoiantes e defender os interesses e valores do LIVRE.</p>
+      <p>Apresento esta candidatura porque considero que é preciso continuarmos a apresentar e representar melhores soluções. Soluções que melhorem a vida de todos os nossos concidadãos, garantindo o progresso, a igualdade entre todos e condições de vida digna, enquanto caminhamos na direção de um país mais ecológico e sustentável.</p>
+      <p>Defendo que devemos trabalhar na direção de um país onde a transição climática não seja um fardo para os mais vulneráveis, mas sim uma oportunidade de construir mais justiça social e melhores condições de vida. Nesse percurso, a minha experiência em ciência de dados pode ser um contributo concreto: usar dados para identificar desigualdades, avaliar políticas públicas e fundamentar decisões com mais rigor. Decisões que não são baseadas em perceções, mas em conclusões com bases concretas - porque progredir implica perceber o que falta, a quem falta, e as consequências, positivas e negativas, das políticas que podemos criar para colmatar essas carências.</p>
+      <p>É com essa vontade de aprender e de contribuir que apresento esta candidatura. Não com certezas absolutas, mas com o compromisso de trabalhar com seriedade e colocar os valores do LIVRE no centro de cada decisão.</p>
+    </div>
+  </section>
+
+</main>
+
+<div class="closing">
+  <div class="wrap">
+    <p class="motto">Pelo <span class="g">LIVRE!</span></p>
+  </div>
+</div>
+
+<footer class="wrap">
+  <span class="foot-left">
+    <span class="livre-badge"><img src="logo-livre.png" alt="LIVRE" /></span>
+    <span class="brand">Constança Rocha</span>
+  </span>
+  <span>GCL Lisboa Norte · Candidatura à Assembleia do LIVRE · 2026–2028</span>
+</footer>
+
+<script>
+  // Theme toggle (persists choice; falls back to OS preference)
+  (function () {
+    var root = document.documentElement;
+    var saved = null;
+    try { saved = localStorage.getItem("theme"); } catch (e) {}
+    if (saved) root.setAttribute("data-theme", saved);
+    document.getElementById("themeBtn").addEventListener("click", function () {
+      var current = root.getAttribute("data-theme");
+      if (!current) current = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      var next = current === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
+    });
+  })();
+
+  // Photo carousel - auto-detects foto1.jpg … foto8.jpg (only shows what loads).
+  (function () {
+    var carousel = document.getElementById("carousel");
+    if (!carousel) return;
+    var track = document.getElementById("track");
+    var dotsWrap = document.getElementById("cDots");
+    var placeholder = document.getElementById("fotoPlaceholder");
+    var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    var candidates = ["foto1.jpg", "foto2.jpg", "foto3.jpg", "foto4.jpg",
+                      "foto5.jpg", "foto6.jpg", "foto7.jpg", "foto8.jpg"];
+    var slots = new Array(candidates.length);
+    var pending = candidates.length;
+
+    candidates.forEach(function (src, i) {
+      var probe = new Image();
+      probe.onload = function () { slots[i] = src; done(); };
+      probe.onerror = function () { slots[i] = null; done(); };
+      probe.src = src;
+    });
+
+    function done() {
+      if (--pending > 0) return;
+      var found = slots.filter(function (s) { return s; });
+      if (found.length === 0) { placeholder.style.display = "flex"; return; }
+      build(found);
+    }
+
+    function build(list) {
+      list.forEach(function (src, i) {
+        var img = document.createElement("img");
+        img.src = src;
+        img.alt = "Constança Rocha - fotografia " + (i + 1);
+        img.loading = i === 0 ? "eager" : "lazy";
+        track.appendChild(img);
+
+        var dot = document.createElement("button");
+        dot.type = "button";
+        dot.setAttribute("role", "tab");
+        dot.setAttribute("aria-label", "Foto " + (i + 1) + " de " + list.length);
+        dot.title = "Foto " + (i + 1) + " de " + list.length;
+        dot.addEventListener("click", function () { show(i); rearm(); });
+        dotsWrap.appendChild(dot);
+      });
+
+      var index = 0;
+      var dots = dotsWrap.querySelectorAll("button");
+      var timer = null;
+
+      function show(i) {
+        index = (i + list.length) % list.length;
+        track.style.transform = "translateX(" + (-index * 100) + "%)";
+        dots.forEach(function (d, di) {
+          d.setAttribute("aria-current", di === index ? "true" : "false");
+        });
+      }
+      function next() { show(index + 1); }
+      function prev() { show(index - 1); }
+      function rearm() {
+        if (reduce || list.length < 2) return;
+        clearInterval(timer);
+        timer = setInterval(next, 4800);
+      }
+
+      if (list.length > 1) {
+        carousel.classList.add("has-many");
+        document.getElementById("cNext").addEventListener("click", function () { next(); rearm(); });
+        document.getElementById("cPrev").addEventListener("click", function () { prev(); rearm(); });
+        carousel.addEventListener("mouseenter", function () { clearInterval(timer); });
+        carousel.addEventListener("mouseleave", rearm);
+        carousel.addEventListener("focusin", function () { clearInterval(timer); });
+        carousel.addEventListener("focusout", rearm);
+      }
+
+      show(0);
+      rearm();
+    }
+  })();
+
+  // Signature - data points rising over an ecological ground; one node centred (people first).
+  (function () {
+    var canvas = document.getElementById("sig");
+    if (!canvas) return;
+    var ctx = canvas.getContext("2d");
+    var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var w = 0, h = 0;
+
+    function css(v) { return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+    function rgba(hex, a) {
+      hex = (hex || "#9DB84A").replace("#", "");
+      if (hex.length === 3) hex = hex.split("").map(function (c) { return c + c; }).join("");
+      var n = parseInt(hex, 16);
+      return "rgba(" + ((n >> 16) & 255) + "," + ((n >> 8) & 255) + "," + (n & 255) + "," + a + ")";
+    }
+    function resize() {
+      var r = canvas.getBoundingClientRect();
+      w = r.width; h = r.height;
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    function draw(t) {
+      ctx.clearRect(0, 0, w, h);
+      var green = css("--green") || "#9DB84A";
+      var line = css("--sig-line") || green;
+
+      // ecological ground - two soft hill layers
+      var hills = [{ yb: 0.72, amp: 9, off: 0.0, a: 0.10 },
+                   { yb: 0.88, amp: 13, off: 1.6, a: 0.17 }];
+      hills.forEach(function (L) {
+        ctx.beginPath(); ctx.moveTo(0, h);
+        for (var x = 0; x <= w; x += 6) {
+          var p = x / w;
+          ctx.lineTo(x, h * L.yb + Math.sin(p * 6 + L.off + t * 0.15) * L.amp);
+        }
+        ctx.lineTo(w, h); ctx.closePath();
+        ctx.fillStyle = rgba(green, L.a); ctx.fill();
+      });
+
+      // data trend - a wavier, less linear path with a centred, emphasized node
+      var N = 9, padX = w * 0.07, span = w - 2 * padX, pts = [];
+      for (var i = 0; i < N; i++) {
+        var p = i / (N - 1);
+        var x = padX + p * span;
+        var wobble = Math.sin(p * 3.4 + t * 0.3) * 22 + Math.sin(p * 7.1 + 1.3) * 12;
+        var y = h * 0.62 - p * h * 0.22 + wobble + Math.sin(i * 1.7 + t * 0.35) * 4;
+        pts.push([x, y]);
+      }
+      ctx.beginPath(); ctx.moveTo(pts[0][0], pts[0][1]);
+      for (var j = 1; j < N - 1; j++) {
+        var xc = (pts[j][0] + pts[j + 1][0]) / 2;
+        var yc = (pts[j][1] + pts[j + 1][1]) / 2;
+        ctx.quadraticCurveTo(pts[j][0], pts[j][1], xc, yc);
+      }
+      ctx.quadraticCurveTo(pts[N - 1][0], pts[N - 1][1], pts[N - 1][0], pts[N - 1][1]);
+      ctx.strokeStyle = rgba(line, 0.45); ctx.lineWidth = 1.5; ctx.stroke();
+
+      var mid = Math.floor(N / 2);
+      for (var k = 0; k < N; k++) {
+        if (k === mid) continue;
+        ctx.beginPath();
+        ctx.arc(pts[k][0], pts[k][1], 2.4, 0, Math.PI * 2);
+        ctx.fillStyle = rgba(line, 0.75);
+        ctx.fill();
+      }
+
+      // centred node - a small person icon (people first)
+      var cx = pts[mid][0], cy = pts[mid][1];
+      var pr = (Math.sin(t * 1.5) * 0.5 + 0.5) * 6;
+      ctx.beginPath();
+      ctx.arc(cx, cy, 8 + pr, 0, Math.PI * 2);
+      ctx.strokeStyle = rgba(green, 0.28); ctx.lineWidth = 1.4; ctx.stroke();
+
+      ctx.fillStyle = green;
+      // head
+      ctx.beginPath();
+      ctx.arc(cx, cy - 3.6, 2.5, 0, Math.PI * 2);
+      ctx.fill();
+      // shoulders/body - rounded arc clipped to a half-disc
+      ctx.beginPath();
+      ctx.arc(cx, cy + 6.2, 5.4, Math.PI, 0, false);
+      ctx.closePath();
+      ctx.fill();
+    }
+
+    resize();
+    window.addEventListener("resize", resize);
+    if (reduce) { draw(0.8); return; }
+    var start = performance.now();
+    (function loop(now) { draw((now - start) / 1000); requestAnimationFrame(loop); })(start);
+  })();
+</script>
